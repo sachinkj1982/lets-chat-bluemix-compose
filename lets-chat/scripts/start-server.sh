@@ -6,24 +6,28 @@ if [ "$?" != "0" ]; then
 	echo "'credentials.uri' not found in 'user-provided' VCAP_SERVICES"
 	exit 1
 fi
+echo $TEMP_URI  
 
 TEMP_PORT=`python scripts/extract-vcap.py user-provided 0 credentials.port`
 if [ "$?" != "0" ]; then
         echo "'credentials.port' not found in 'user-provided' VCAP_SERVICES"
         exit 1
 fi
+echo $TEMP_PORT
 
 TEMP_USER=`python scripts/extract-vcap.py user-provided 0 credentials.user`
 if [ "$?" != "0" ]; then
         echo "'credentials.user' not found in 'user-provided' VCAP_SERVICES"
         exit 1
 fi
+echo $TEMP_USER
 
 TEMP_PASS=`python scripts/extract-vcap.py user-provided 0 credentials.password`
 if [ "$?" != "0" ]; then
         echo "'credentials.password' not found in 'user-provided' VCAP_SERVICES"
         exit 1
 fi
+echo $TEMP_PASS
 
 #Check for a database name passed in via --env, otherwise use default database name below
 #DEFAULT_DBNAME is "lets-chat-mongo"
