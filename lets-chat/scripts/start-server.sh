@@ -34,6 +34,7 @@ echo $TEMP_PASS
 export LCB_DATABASE_NAME=${LCB_DATABASE_NAME:-lets-chat-mongo}
 
 export LCB_DATABASE_URI="mongodb://${TEMP_USER}:${TEMP_PASS}@${TEMP_URI}:${TEMP_PORT}/${LCB_DATABASE_NAME}"
+echo $LCB_DATABASE_URI
 
 # Inserting sleep delay per recommendation via https://www.ng.bluemix.net/docs/containers/container_single_ov.html#container_single_cli
 sleep 60
